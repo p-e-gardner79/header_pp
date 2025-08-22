@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    
+</head>
+<body>
+
+    <!-- This is a helper to simulate logging in/out for the demo -->
+    <div class="demo-controls">
+        <label for="login-toggle">Toggle Logged-In State:</label>
+        <input type="checkbox" id="login-toggle">
+    </div>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="/" class="header-logo" aria-label="Civica Pension Portal Home">
+                <!-- Placeholder logo -->
+                <img src="https://placehold.co/200x50/183850/FFFFFF?text=PORTAL+LOGO" alt="Portal Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/183850/FFFFFF?text=LOGO';">
+            </a>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav" id="main-navigation">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    
+                    <li class="mega-menu-item">
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Pensions Hub <span class="mdi mdi-chevron-down"></span></a>
+                        <div class="mega-menu">
+                            <div class="container mega-menu-inner">
+                                <div class="mega-menu-promo">
+                                    <h3><span class="mdi mdi-compass-outline"></span>Pensions Hub</h3>
+                                    <p>Find information and guides relevant to your pension journey.</p>
+                                </div>
+                                <div class="mega-menu-links-grid">
+                                    <ul>
+                                        <li><a href="#"><span class="mdi mdi-account-plus-outline"></span>I'm new to my pension scheme</a></li>
+                                        <li><a href="#"><span class="mdi mdi-file-document-edit-outline"></span>I want to make some pension changes</a></li>
+                                        <li><a href="#"><span class="mdi mdi-account-switch-outline"></span>I have a change in circumstances</a></li>
+                                        <li><a href="#"><span class="mdi mdi-trending-up"></span>I'm planning my retirement</a></li>
+                                        <li><a href="#"><span class="mdi mdi-human-greeting-variant"></span>I'm a retired member</a></li>
+                                        <li><a href="#"><span class="mdi mdi-emoticon-sad-outline"></span>I want to report a death</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- == LOGGED-IN ROLE-BASED LINKS == -->
+                    <li class="mega-menu-item role-conditional" data-roles="active,deferred,pensioner" style="display: none;">
+                        <a href="#" aria-haspopup="true" aria-expanded="false">My Documents <span class="mdi mdi-chevron-down"></span></a>
+                        <div class="mega-menu">
+                            <div class="container mega-menu-inner">
+                                <div class="mega-menu-promo">
+                                    <h3><span class="mdi mdi-file-document-multiple-outline"></span>My Documents</h3>
+                                    <p>Access your statements, letters, and important forms.</p>
+                                </div>
+                                <div class="mega-menu-links-grid">
+                                    <ul>
+                                        <li><a href="#"><span class="mdi mdi-file-chart-outline"></span>Annual Statements</a></li>
+                                        <li><a href="#"><span class="mdi mdi-email-outline"></span>Correspondence</a></li>
+                                        <li><a href="#"><span class="mdi mdi-account-heart-outline"></span>Nomination Forms</a></li>
+                                        <li><a href="#"><span class="mdi mdi-book-open-page-variant-outline"></span>Scheme Guides</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mega-menu-item role-conditional" data-roles="active,deferred,pensioner" style="display: none;">
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Calculators <span class="mdi mdi-chevron-down"></span></a>
+                        <div class="mega-menu">
+                            <div class="container mega-menu-inner">
+                                <div class="mega-menu-promo">
+                                    <h3><span class="mdi mdi-calculator-variant-outline"></span>Calculators</h3>
+                                    <p>Estimate your pension benefits with our range of planning tools.</p>
+                                </div>
+                                <div class="mega-menu-links-grid">
+                                    <ul>
+                                        <li><a href="#"><span class="mdi mdi-cash-multiple"></span>Pension Payment Calculator</a></li>
+                                        <li><a href="#"><span class="mdi mdi-cash-100"></span>Lump Sum Calculator</a></li>
+                                        <li><a href="#"><span class="mdi mdi-run-fast"></span>Early Retirement Calculator</a></li>
+                                        <li><a href="#"><span class="mdi mdi-account-remove-outline"></span>Redundancy Calculator</a></li>
+                                        <li><a href="#"><span class="mdi mdi-hospital-box-outline"></span>Ill Health Calculator</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mega-menu-item role-conditional" data-roles="active,deferred,pensioner" style="display: none;">
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Personal Info <span class="mdi mdi-chevron-down"></span></a>
+                        <div class="mega-menu">
+                            <div class="container mega-menu-inner">
+                                <div class="mega-menu-promo">
+                                    <h3><span class="mdi mdi-account-details-outline"></span>Personal Info</h3>
+                                    <p>Keep your personal information and preferences up to date.</p>
+                                </div>
+                                <div class="mega-menu-links-grid">
+                                    <ul>
+                                        <li><a href="#"><span class="mdi mdi-email-check-outline"></span>Update contact preferences</a></li>
+                                        <li><a href="#"><span class="mdi mdi-bank-outline"></span>Update bank details</a></li>
+                                        <li><a href="#"><span class="mdi mdi-phone-outline"></span>Update telephone number</a></li>
+                                        <li><a href="#"><span class="mdi mdi-home-map-marker"></span>Update home address</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="role-conditional" data-roles="active,deferred,pensioner" style="display: none;">
+                        <a href="/faqs">FAQs</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- == LOGGED-OUT ACTION == -->
+                <div class="role-conditional" data-roles="" style="display: block;">
+                    <a href="/login" class="button button-primary">Log In</a>
+                </div>
+
+                <!-- == LOGGED-IN ACTIONS == -->
+                <div class="header-actions-logged-in role-conditional" data-roles="active,deferred,pensioner" style="display: none;">
+                    <button class="notification-button" aria-label="View 3 unread notifications">
+                        <span class="mdi mdi-bell"></span>
+                        <span class="notification-count">3</span>
+                    </button>
+
+                    <div class="user-menu">
+                        <button class="user-menu-toggle" aria-haspopup="true" aria-expanded="false">
+                            Hi, John <span class="mdi mdi-chevron-down"></span>
+                        </button>
+                        <div class="user-menu-dropdown">
+                            <p class="last-login-info">Last logged in: 22/08/2025 at 10:42</p>
+                            <ul>
+                                <li><a href="/my-details">My Details</a></li>
+                                <li><a href="/logout">Log Off</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Mobile Navigation Toggle (Hamburger Icon) -->
+            <button class="mobile-nav-toggle" aria-controls="main-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Page Content</h1>
+            <p>This is where the main content of the page would go, below the header.</p>
+        </div>
+    </main>
+
+<script src="./scripts.js"></script>
+
+</body>
+</html>
